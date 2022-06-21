@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+  social-server:
+    build: ./docker/node-social
+    ports:
+      - "3001:6055"
+    expose:
+      - "3001"
+    volumes:
+      - ./social:/app
+
+    working_dir: /app
+    entrypoint: bash -c "npm install && npm run dev-server"
+  
+
+  social-cli:
+     build: ./docker/node-ws
+     volumes:
+       - ./social:/app
+
+     working_dir: /app
+
+  ws-server:
+    build: ./docker/node-ws     
+    volumes:
+      - ./ws:/app
+
+    working_dir: /app  
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    entrypoint: bash -c "npm install && npm run start:local"
+    
+  
+  ws-cli:
+    build: ./docker/node-ws      
+    volumes:
+      - ./ws:/app
+    working_dir: /app        

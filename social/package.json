@@ -1,0 +1,15 @@
+{
+  "name": "integration",
+  "version": "1.2.1",
+  "description": "",
+  "main": "worker.js",
+  "scripts": {
+    "dev-server": "nodemon --inspect=0.0.0.0 server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sockjs-client": "^1.5.0"
+  },
+  "devDependencies": {}
+}

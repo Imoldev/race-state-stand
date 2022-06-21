@@ -1,0 +1,13 @@
+{
+  "name": "ws",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start:local": "nodemon --inspect=0.0.0.0 worker.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "sockjs": "^0.3.18"
+  },
+  "devDependencies": {}
+}
